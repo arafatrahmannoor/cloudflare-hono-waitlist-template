@@ -3,20 +3,27 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import SignUp from "../components/SignUp";
 import Card from "../components/Card.astro";
+import ServerStatus from "../components/ServerStatus";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
- <Hero />
- <div class="flex justify-center p-4">
-     <SignUp />
- </div>
- <div class="space-y-6 p-4 md:flex md:gap-4 md:space-y-0">
-     <Card title="Cookies" description="We are using cookies for no reason." />
-     <Card title="Privacy Policy" description="We are committed to protecting your privacy and ensuring the security of your personal information." />
-     <Card title="Terms of Service" description="By using our service, you agree to the terms and conditions outlined in this document." />
-
- </div>
+  <Hero />
+  <div class="flex justify-center p-4">
+    <SignUp />
+  </div>
+  <ServerStatus client:load />
+  <div class="space-y-6 p-4 md:flex md:gap-4 md:space-y-0">
+    <Card title="Cookies" description="We are using cookies for no reason." />
+    <Card
+      title="Privacy Policy"
+      description="We are committed to protecting your privacy and ensuring the security of your personal information."
+    />
+    <Card
+      title="Terms of Service"
+      description="By using our service, you agree to the terms and conditions outlined in this document."
+    />
+  </div>
 </Layout>
