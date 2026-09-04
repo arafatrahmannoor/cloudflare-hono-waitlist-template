@@ -13,7 +13,10 @@ import Card from "../components/Card.astro";
  <div class="flex justify-center p-4">
      <SignUp />
  </div>
- <Card title="Cookies!" description="We are using cookies for no reason." />
- <Card title="Cookies!" description="We are using cookies for no reason." />
- <Card title="Cookies!" description="We are using cookies for no reason." />
+ <div class="space-y-6 p-4 md:flex md:gap-4 md:space-y-0">
+     <Card title="Cookies" description="We are using cookies for no reason." />
+     <Card title="Privacy Policy" description="We are committed to protecting your privacy and ensuring the security of your personal information." />
+     <Card title="Terms of Service" description="By using our service, you agree to the terms and conditions outlined in this document." />
+
+ </div>
 </Layout>
