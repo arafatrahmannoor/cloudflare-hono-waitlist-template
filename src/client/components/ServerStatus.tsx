@@ -8,6 +8,7 @@ const ServerStatus = () => {
         fetch('/api/health')
         .then(res => res.json())
         .then(data => setStatus(data))
+    
     },[])
     return (
         <div>
@@ -15,6 +16,7 @@ const ServerStatus = () => {
             <p className="text-center text-green-500">{status}</p>
         </div>
     );
+    
 };
 
 export default ServerStatus;
