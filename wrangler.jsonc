@@ -3,7 +3,27 @@
 	
 	"name": "cloudflare-hono-waitlist-template",
     "compatibility_date": "2026-09-03",
-	"main": "src/server/index.ts"
+	"main": "src/server/index.ts",
+	"assets": {
+		"directory": "./dist",
+		"binding": "ASSETS"
+	},
+	"env": {
+		"staging": {
+			"vars": {
+				"ENVIRONMENT": "staging",
+				"CF_ACCESS_DOMAIN": "https://green-fire-15ed.cloudflareaccess.com/cdn-cgi/access/certs",
+				"POLICY_ID": "1dc88100dc5f540fee23727b1555ab8c3607c3c21d51ea93db1a592f1c95e9df"
+			}
+			
+		},
+		"production": {
+			"vars": {
+				"ENVIRONMENT": "production",
+			},
+		
+		},
+	},
 	
 	
 	
