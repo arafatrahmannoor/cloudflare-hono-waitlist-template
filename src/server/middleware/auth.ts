@@ -16,7 +16,7 @@ export const accessAuth = createMiddleware(async (c, next) => {
   const token = c.req.header("CF-Access-Jwt-Assertion");
 
   if (!token) {
-    return c.json("Missing Access identity", 403);
+    return c.json("Missing Access identity!!", 403);
   }
 
   const ACCESS_JWKS = createRemoteJWKSet(
@@ -24,6 +24,7 @@ export const accessAuth = createMiddleware(async (c, next) => {
   );
 
   await jwtVerify(token, ACCESS_JWKS, {
+    issuer: c.env.CF_ACCESS_DOMAIN,
     audience: c.env.POLICY_ID,
   });
   await next();
